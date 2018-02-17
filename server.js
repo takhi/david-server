@@ -36,7 +36,7 @@ function startServer() {
             let urlInfo = url.parse(request.url, true);
             let letters = urlInfo.query.letters;
             let solutions = david(letters, dictionary);
-            response.writeHead(200, {'Content-Type': 'application/json'});
+            response.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'});
             response.write(JSON.stringify(solutions));
         } else {
             response.statusCode = 400;
