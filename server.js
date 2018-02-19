@@ -29,7 +29,7 @@ function populateDictionary(path) {
 function startServer() {
     const PORT = 1000;
     // url: http://localhost:1000/solve?letters=abcdefghi
-    const validURL = /^\/solve\?letters/; 
+    const validURL = /^\/solve\?letters=\[a-z]{9}/; 
     
     const server = http.createServer((request, response) => {
         if (validURL.test(request.url)) {
